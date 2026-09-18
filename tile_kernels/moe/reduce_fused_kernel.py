@@ -117,6 +117,8 @@ def reduce_fused(
         assert topk_weights.device == device, f'topk_weights is on {topk_weights.device}, expected {device}'
     if x_sf is not None:
         assert x_sf.device == device, f'x_sf is on {x_sf.device}, expected {device}'
+    if sf is not None:
+        assert sf.device == device, f'sf is on {sf.device}, expected {device}'
 
     if out is not None:
         num_tokens_, hidden_ = out.shape
